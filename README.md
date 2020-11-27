@@ -1,37 +1,46 @@
-## Welcome to GitHub Pages
+<!DOCTYPE HTML>
+<html>
 
-You can use the [editor on GitHub](https://github.com/CapSparkle/AR-NewYear/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+<head>
+    <meta charset="utf-8">
+    <title>Сфотографируйся со снеговиком</title>
+    <script type="text/javascript" src="ua-parser.min.js"></script>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+</head>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+<body>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", ChooseARContent);
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+        function ChooseARContent() {
+            var parser = new UAParser();
+            var OS = parser.getOS().name;
+            OS = OS.toLowerCase();
+            console.log(OS);
+            alert(OS);
 
-1. Numbered
-2. List
+            var elem = document.getElementById("slot");
+            if (OS == "windows") {
+                //elem.innerHTML = '<img src="https://github.com/eman-insilico/AR-Quick-Look-examples/raw/master/Face%20tracking%20icon.JPG" width="250" height="250">';
+            } else if (OS == "android") {
+                //window.location.href = "http://example.com";
+            } else {
+                window.location.href = "https://example.com";
+            }
+        }
+    </script>
 
-**Bold** and _Italic_ and `Code` text
+    <div id="slot">
+        <p>
+            Paragraph!
+        </p>
+        get your asses back here!
+    </div>
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+</body>
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/CapSparkle/AR-NewYear/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+</html>
