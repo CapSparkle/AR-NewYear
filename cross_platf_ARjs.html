@@ -6,8 +6,9 @@
 
 <body>
     <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-    <a-scene embedded arjs>
-        <a-box position='0 0 0' material='opacity: 0.5;'></a-box>
-        <a-marker-camera preset='hiro'></a-marker-camera>
+    <a-scene embedded arjs="trackingMethod: best;" vr-mode-ui="enabled: false;">
+        <a-nft type="nft" url="marker" smooth="true" smoothCount="11" smoothTolerance=".01" smoothThreshold="5" size="0.184">
+            <a-box position='0 0 0' material='opacity: 0.5;'></a-box>
+        </a-nft>
     </a-scene>
 </body>
