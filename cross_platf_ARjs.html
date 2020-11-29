@@ -24,6 +24,16 @@
             color: white;
         }
     </style>
+
+    <script type="text/javascript">
+        window.onmessage = function handleConsoleMessages(event) {
+            var data = JSON.parse(event.data);
+            var elem = document.getElementById("arjs-loader");
+            elem.innerHTML = event.data;
+        }
+    </script>
+
+
 </head>
 
 <body style="margin : 0px; overflow: hidden;">
@@ -37,6 +47,7 @@
             <a-box position='0 0 0 ' material='opacity: 0.5; '></a-box>
         </a-nft>
     </a-scene>
+
     <!--
     <a-scene vr-mode-ui='enabled: false; ' renderer="logarithmicDepthBuffer: true;" embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false; '>
 
