@@ -29,7 +29,7 @@
         window.onmessage = function handleConsoleMessages(event) {
             var data = JSON.parse(event.data);
             var elem = document.getElementById("arjs-loader");
-            elem.innerHTML = event.data;
+            elem.innerHTML = '<div>' + event.data + '</div>';
         }
     </script>
 
