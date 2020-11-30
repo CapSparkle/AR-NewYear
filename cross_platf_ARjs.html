@@ -28,11 +28,11 @@
 
     <script type="text/javascript">
         /*console.defaultLog = console.log.bind(console);
-        console.logs = [];
-        console.log = function() {
-            console.defaultLog.apply(console, arguments);
-            console.logs.push(Array.from(arguments));
-        };*/
+                console.logs = [];
+                console.log = function() {
+                    console.defaultLog.apply(console, arguments);
+                    console.logs.push(Array.from(arguments));
+                };*/
 
         ConsoleListener.on("log", function() {
             var elem = document.getElementById("log_placeHolder");
@@ -74,13 +74,6 @@
             </a-entity>
         </a-nft>
     </a-scene>
-
-    <div>
-        <div>
-            console.log.out
-        </div>
-    </div>
-
 
     <!--
     <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true;" embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
