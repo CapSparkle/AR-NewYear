@@ -28,27 +28,27 @@
 
     <script type="text/javascript">
         /*console.defaultLog = console.log.bind(console);
-                console.logs = [];
-                console.log = function() {
-                    console.defaultLog.apply(console, arguments);
-                    console.logs.push(Array.from(arguments));
-                };*/
+                        console.logs = [];
+                        console.log = function() {
+                            console.defaultLog.apply(console, arguments);
+                            console.logs.push(Array.from(arguments));
+                        };*/
 
         ConsoleListener.on("log", function() {
             var elem = document.getElementById("log_placeHolder");
             var a = arguments
             switch (a.length) {
                 case 0:
-                    elem.innerHTML = "nothing";
+                    elem.innerHTML = "<div>" + "nothing" + "</div>";
                     break;
                 case 1:
-                    elem.innerHTML = a[0] + " | ";
+                    elem.innerHTML = "<div>" + a[0] + " | " + "</div>";
                     break;
                 case 2:
-                    elem.innerHTML = a[0] + " | " + a[1] + " | ";
+                    elem.innerHTML = "<div>" + a[0] + " | " + a[1] + " | " + "</div>";
                     break;
                 default:
-                    elem.innerHTML = "default lol";
+                    elem.innerHTML = "<div>" + "default lol" + "</div>";
                     break;
             }
         });
