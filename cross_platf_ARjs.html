@@ -32,17 +32,23 @@
         <div>Loading, please wait...</div>
     </div>
 
+
+    <div class="log">
+        <div>here is log.</div>
+    </div>
+
     <script type="text/javascript">
-        var output = document.createElement('pre');
-        document.body.appendChild(output); // Reference to native method(s) 
-        var oldLog = console.log;
-        console.log = function(...items) {
+        window.onmessage = function(event) {
+            var elem = document.getElementById("log");
+            elem.innerHTML = event.innerHTML;
+
+
             // Call native method first 
-            oldLog.apply(this, items); // Use JSON to transform objects, all others display normally 
+            /*oldLog.apply(this, items); // Use JSON to transform objects, all others display normally 
             items.forEach((item, i) => {
                 items[i] = (typeof item === 'object' ? JSON.stringify(item, null, 4) : item);
             });
-            output.innerHTML += items.join(' ') + '<br />';
+            output.innerHTML += items.join(' ') + '<br />';*/
         };
     </script>
 
