@@ -28,11 +28,11 @@
 
     <script type="text/javascript">
         /*console.defaultLog = console.log.bind(console);
-                        console.logs = [];
-                        console.log = function() {
-                            console.defaultLog.apply(console, arguments);
-                            console.logs.push(Array.from(arguments));
-                        };*/
+                                                        console.logs = [];
+                                                        console.log = function() {
+                                                            console.defaultLog.apply(console, arguments);
+                                                            console.logs.push(Array.from(arguments));
+                                                        };*/
 
         ConsoleListener.on("log", function() {
             var elem = document.getElementById("log_placeHolder");
@@ -48,7 +48,7 @@
                     elem.innerHTML = "<div>" + a[0] + " | " + a[1] + " | " + "</div>";
                     break;
                 default:
-                    elem.innerHTML = "<div>" + "default lol" + "</div>";
+                    elem.innerHTML = "<div>" + a[0] + " | " + a[1] + " | " + "</div>";
                     break;
             }
         });
