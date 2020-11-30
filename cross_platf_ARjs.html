@@ -39,6 +39,14 @@
     </style>
 
     <script type="text/javascript">
+        this.onmessage = function(e) {
+            var elem = document.getElementById("log_placeHolder");
+            var msg = e.data;
+            elem.textContent = msg.param;
+        }
+
+
+
         ConsoleListener.on("log", function() {
             var elem = document.getElementById("log_placeHolder");
             var a = arguments
