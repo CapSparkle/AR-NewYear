@@ -6,7 +6,6 @@
 
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <script src="https://rawcdn.githack.com/ianpgall/js-console-listener/6658312b1e030c983b6d2fd7a054b6dcf6f7c454/console-listener.js"></script>
 
     <style>
         .arjs-loader {
@@ -27,74 +26,8 @@
             font-size: 1.25em;
             color: white;
         }
-        
-        div.sticky {
-            position: -webkit-sticky;
-            position: sticky;
-            top: 0;
-            padding: 5px;
-            background-color: #cae8ca;
-            border: 2px solid #4CAF50;
-        }
     </style>
 
-    <script type="text/javascript">
-        this.onmessage = function(e) {
-            var elem = document.getElementById("log_placeHolder");
-            var msg = e.data;
-            elem.textContent = msg.param;
-        }
-
-
-
-        ConsoleListener.on("log", function() {
-            var elem = document.getElementById("log_placeHolder");
-            var a = arguments
-            switch (a.length) {
-                case 0:
-                    elem.textContent = "nothing";
-                    break;
-                case 1:
-                    elem.textContent = a[0] + " | ";
-                    break;
-                default:
-                    elem.textContent = a[0] + " | " + a[1] + " | ";
-                    break;
-            }
-        });
-
-        ConsoleListener.on("warn", function() {
-            var elem = document.getElementById("log_placeHolder");
-            var a = arguments
-            switch (a.length) {
-                case 0:
-                    elem.textContent = "nothing";
-                    break;
-                case 1:
-                    elem.textContent = a[0] + " | ";
-                    break;
-                default:
-                    elem.textContent = a[0] + " | " + a[1] + " | ";
-                    break;
-            }
-        });
-
-        ConsoleListener.on("info", function() {
-            var elem = document.getElementById("log_placeHolder");
-            var a = arguments
-            switch (a.length) {
-                case 0:
-                    elem.textContent = "nothing";
-                    break;
-                case 1:
-                    elem.textContent = a[0] + " | ";
-                    break;
-                default:
-                    elem.textContent = a[0] + " | " + a[1] + " | ";
-                    break;
-            }
-        });
-    </script>
 
 </head>
 
@@ -103,12 +36,6 @@
     <div class="arjs-loader">
         <div>Loading, please wait...</div>
     </div>
-
-
-    <div class="sticky" id="log_placeHolder">
-        <div>here is log.</div>
-    </div>
-
 
     <a-scene embedded arjs="trackingMethod: best;" vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;">
         <a-nft type="nft" url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/CapSparkle/AR-NewYear/main/marker/pinball' smooth="true" smoothCount="7" smoothTolerance=".01" smoothThreshold="5">
