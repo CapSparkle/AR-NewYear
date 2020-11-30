@@ -69,6 +69,22 @@
                     break;
             }
         });
+
+        ConsoleListener.on("info", function() {
+            var elem = document.getElementById("log_placeHolder");
+            var a = arguments
+            switch (a.length) {
+                case 0:
+                    elem.textContent = "nothing";
+                    break;
+                case 1:
+                    elem.textContent = a[0] + " | ";
+                    break;
+                default:
+                    elem.textContent = a[0] + " | " + a[1] + " | ";
+                    break;
+            }
+        });
     </script>
 
 </head>
