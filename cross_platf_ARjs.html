@@ -3,6 +3,7 @@
 <head>
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://rawcdn.githack.com/ianpgall/js-console-listener/6658312b1e030c983b6d2fd7a054b6dcf6f7c454/console-listener.js"></script>
 
     <style>
         .arjs-loader {
@@ -24,6 +25,35 @@
             color: white;
         }
     </style>
+
+    <script type="text/javascript">
+        /*console.defaultLog = console.log.bind(console);
+        console.logs = [];
+        console.log = function() {
+            console.defaultLog.apply(console, arguments);
+            console.logs.push(Array.from(arguments));
+        };*/
+
+        ConsoleListener.on("log", function() {
+            var elem = document.getElementById("log_placeHolder");
+            var a = arguments
+            switch (a.length) {
+                case 0:
+                    elem.innerHTML = "nothing";
+                    break;
+                case 1:
+                    elem.innerHTML = a[0] + " | ";
+                    break;
+                case 2:
+                    elem.innerHTML = a[0] + " | " + a[1] + " | ";
+                    break;
+                default:
+                    elem.innerHTML = "default lol";
+                    break;
+            }
+        });
+    </script>
+
 </head>
 
 <body style="margin : 0px; overflow: hidden;">
@@ -33,24 +63,9 @@
     </div>
 
 
-    <div class="log">
+    <div class="log_placeHolder">
         <div>here is log.</div>
     </div>
-
-    <script type="text/javascript">
-        window.onmessage = function(event) {
-            var elem = document.getElementById("log");
-            elem.innerHTML = event.data;
-
-
-            // Call native method first 
-            /*oldLog.apply(this, items); // Use JSON to transform objects, all others display normally 
-            items.forEach((item, i) => {
-                items[i] = (typeof item === 'object' ? JSON.stringify(item, null, 4) : item);
-            });
-            output.innerHTML += items.join(' ') + '<br />';*/
-        };
-    </script>
 
 
     <a-scene embedded arjs="trackingMethod: best;" vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;">
@@ -59,6 +74,14 @@
             </a-entity>
         </a-nft>
     </a-scene>
+
+    <div>
+        <div>
+            console.log.out
+        </div>
+    </div>
+
+
     <!--
     <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true;" embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
     <a-nft type='nft' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
