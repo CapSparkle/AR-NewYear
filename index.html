@@ -1,49 +1,21 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
 
 <head>
-    <meta charset="utf-8">
-    <title>onetwo</title>
-    <script type="text/javascript" src="ua-parser.min.js"></script>
-
 
 </head>
 
 <body>
-    <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", ChooseARContent);
-
-        function ChooseARContent() {
-            var parser = new UAParser();
-            var OS = parser.getOS().name;
-            OS = OS.toLowerCase();
-            console.log(OS);
-            alert(OS);
-
-
-            window.location.href = "cross_platf_ARjs.html";
-            /*var elem = document.getElementById("slot");
-            if (OS == "windows") {
-                window.location.href = "https://example.com";
-                //elem.innerHTML = '<img src="https://github.com/eman-insilico/AR-Quick-Look-examples/raw/master/Face%20tracking%20icon.JPG" width="250" height="250">';
-            } else if (OS == "android") {
-                window.location.href = "http://example.com";
-            } else {
-                window.location.href = "http://example.com";
-                
-                elem.innerHTML = '<a href="https://github.com/eman-insilico/AR-Quick-Look-examples/raw/master/Angry%20guy%20animation.reality" rel="ar"> \
-                <img src="https://github.com/eman-insilico/AR-Quick-Look-examples/raw/master/lion%20clock%20icon.jfif" width="250" height="250"> \
-                </a>' */
-        }
-    </script>
-
-    <div id="slot">
-        <p>
-            Paragraph!
-        </p>
-    </div>
-
-
+    <iframe src="https://mywebar.com/p/Project_0_4887" style="
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: 999999;
+    height: 100%;
+  " allow="camera; accelerometer; vr"> Your browser does not support embedded content </iframe>
 </body>
-
-</html>
