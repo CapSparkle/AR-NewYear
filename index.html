@@ -9,21 +9,20 @@
         }
 
         function takeshot() {
-
             let div = document.getElementById('ARwindow');
             html2canvas(div).then(
                 function(canvas) {
-                    document.getElementById('output').appendChild(canvas);
+                    let photoToSave = canvas.toBlob(function(blob) {
+
+                    });
                 })
         }
     </script>
 </head>
 
 <body>
-    <div id="ARwindow">
-        <button onclick="alertF()" style="outline: none;
-        background-color: transparent;
-        ">
+
+    <button onclick="takeshot()" style="outline: none;">
         <img src="t2.png" style="
         position: absolute;
         z-index: 2;
@@ -33,7 +32,8 @@
         top: 100%;
         margin-left: -2.5pc;
         margin-top: -7.5pc;">
-        </button>
+    </button>
+    <div id="ARwindow">
         <iframe src="https://mywebar.com/p/Project_0_4887" style="
     position: fixed;
     top: 0px;
