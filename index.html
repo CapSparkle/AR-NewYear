@@ -4,7 +4,12 @@
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js">
     </script>
     <script type="text/javascript">
+        function alertF() {
+            alert(1);
+        }
+
         function takeshot() {
+
             let div = document.getElementById('ARwindow');
             html2canvas(div).then(
                 function(canvas) {
@@ -16,7 +21,7 @@
 
 <body>
     <div id="ARwindow">
-        <button onclick="takeshot()">
+        <button onclick="alertF()">
         <img src="photo_camera.jpg" style="
         position: absolute;
         z-index: 2;
