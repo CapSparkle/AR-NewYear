@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
 <head>
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+    <script src="ua-parser.min.js"></script>
     <script type="text/javascript">
         function alertF() {
             alert(1);
@@ -18,36 +18,63 @@
                 })
         }
     </script>
+
 </head>
 
 <body>
 
-    <button onclick="takeshot()" style="outline: none;">
-        <img src="t2.png" style="
-        position: absolute;
-        z-index: 2;
-        width: 5pc;
-        height: 4pc;
-        left: 50%;
-        top: 100%;
-        margin-left: -2.5pc;
-        margin-top: -7.5pc;">
-    </button>
-    <div id="ARwindow">
-        <iframe src="https://mywebar.com/p/Project_0_4887" style="
-    position: fixed;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    width: 100%;
-    border: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    z-index: 1;
-    height: 100%;
-  " allow="camera; accelerometer; vr"> Your browser does not support embedded content </iframe>
-    </div>
 
-    <div id="output"></div>
-</body>
+
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", ChooseARContent);
+
+            function ChooseARContent() {
+                var parser = new UAParser();
+                var OS = parser.getOS().name;
+                OS = OS.toLowerCase();
+                console.log(OS);
+                alert(OS);
+
+                <
+                button onclick = "takeshot()"
+                style = "outline: none;" >
+                    <
+                    img src = "t2.png"
+                style = "
+                position: absolute;
+                z - index: 2;
+                width: 5 pc;
+                height: 4 pc;
+                left: 50 % ;
+                top: 100 % ;
+                margin - left: -2.5 pc;
+                margin - top: -7.5 pc;
+                "> < /
+                button > <
+                    div id = "ARwindow" >
+                    <
+                    iframe src = "https://mywebar.com/p/Project_0_4887"
+                style = "
+                position: fixed;
+                top: 0 px;
+                bottom: 0 px;
+                right: 0 px;
+                width: 100 % ;
+                border: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                z - index: 1;
+                height: 100 % ;
+                " allow="
+                camera;
+                accelerometer;
+                vr "> Your browser does not support embedded content </iframe> < /
+                div >
+
+                    <
+                    div id = "output" > < /div> < /
+                body >
